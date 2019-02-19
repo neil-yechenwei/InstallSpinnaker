@@ -1,28 +1,28 @@
 echo "${GREEN}Choose your environment"
 
-#sudo apt install git -y
+sudo apt install git -y
 
 CheckLastCommandStatus "Failed to install git"
 
-#sudo apt install netcat -y
+sudo apt install netcat -y
 
 CheckLastCommandStatus "Failed to install netcat"
 
-#sudo apt install redis-server -y
+sudo apt install redis-server -y
 
 CheckLastCommandStatus "Failed to install redis-server"
 
-#sudo add-apt-repository ppa:openjdk-r/ppa
+sudo add-apt-repository ppa:openjdk-r/ppa
 
 CheckLastCommandStatus "Failed to add apt repo for java jdk"
 
-#sudo apt-get update
+sudo apt-get update
 
-#sudo apt-get install openjdk-8-jdk
+sudo apt-get install openjdk-8-jdk
 
 CheckLastCommandStatus "Failed to install java jdk"
 
-#curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 
 CheckLastCommandStatus "Failed to download node"
 
