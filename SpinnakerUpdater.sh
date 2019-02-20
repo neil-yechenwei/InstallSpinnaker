@@ -24,7 +24,7 @@ function CheckLastCommandStatus() {
 }
 
 mkdir -p ${DAILY_LOGS}
-echo $PATH >> ~/test.txt
+
 hal deploy apply >> ${DAILY_LOGS}/apply_${CURRENT_DATE_TIME}.log 2>&1
 
 CheckLastCommandStatus "Deploy spinnaker" ${DAILY_LOGS}/apply_${CURRENT_DATE_TIME}.log
