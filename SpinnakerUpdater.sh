@@ -1,9 +1,12 @@
 #!/bin/bash
 
+PATH=$PATH:/home/iottest/.nvm/versions/node/v10.15.1/bin:/home/iottest/bin:/home/iottest/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/bin
+export PATH
+
 CURRENT_DATE=`date '+%Y_%m_%d'`
 CURRENT_DATE_TIME=`date '+%Y_%m_%d_%H_%M_%S'`
 CURRENT_WORKING_DIC=`pwd`
-DAILY_LOGS=${CURRENT_WORKING_DIC}/logs/${CURRENT_DATE}
+DAILY_LOGS=${CURRENT_WORKING_DIC}/spinnaker_updater_logs/${CURRENT_DATE}
 Message=""
 
 # Check the status of last command
@@ -21,7 +24,7 @@ function CheckLastCommandStatus() {
 }
 
 mkdir -p ${DAILY_LOGS}
-
+echo $PATH >> ~/test.txt
 hal deploy apply >> ${DAILY_LOGS}/apply_${CURRENT_DATE_TIME}.log 2>&1
 
 CheckLastCommandStatus "Deploy spinnaker" ${DAILY_LOGS}/apply_${CURRENT_DATE_TIME}.log
